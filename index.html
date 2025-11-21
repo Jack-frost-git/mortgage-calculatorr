@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Repayment Calculator</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+  rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<div class="container-calculator flex-box">
+  <div class="left-section">
+      <div class ="header flex-box">
+        <h3>Mortgage Calculator</h3>
+        <button id="clear-button">Clear All</button> 
+      </div>
+  <form novalidate>
+    <div class="input-one"> 
+      <label for="mortgage-amount">Mortgage Amount</label>
+      <div class="border flex-box">
+        <span class="notation">£</span>
+        <input type="number" id="mortgage-amount" required name="mortgage-amount">
+      </div>
+      <span class ="error-message">This field is required
+      </span>
+    </div>
+    <div class="flex-box input-two">
+        <div class="field">
+            <label for="mortgage-term">Mortgage Term</label>
+            <div class="border flex-box">
+               <input type="number" id="mortgage-term" required name="mortgage-term">
+               <span class="notation">Years</span>
+            </div>
+            <span class ="error-message">This field is required</span>
+        </div>
+        <div class="field">
+          <label for="interest-rate">Interest Rate</label>
+          <div class="border flex-box">
+             <input type="text" pattern="[0-9]+\.{1}[0-9]" id="interest-rate" required name="interest-rate">
+             <span class="notation">%</span>
+          </div>
+          <span class ="error-message">This field is required</span>
+        </div>
+    </div>
+    <div class="input-three">
+      <p>Mortgage Type</p>  
+    <div class ="border flex-box">
+      <input type="radio" name ="type" id="repayment">
+      <label for="repayment">Repayment</label>
+     </div>
+
+     <div class ="border flex-box">
+      <input type="radio" name ="type" id="interest-only">
+      <label for="interest-only">Interest Only</label>
+     </div>
+    </div>  
+    <span class ="error-message radio-error">This field is required</span>
+    <button  id="calculate-button" class="flex-box">
+    <img src="icon-calculator.svg" alt="Calculate Icon">
+    <span>Calculate Repayments</span>
+  </button>
+ </form>
+  </div>
+  <div class="right-section">
+      <div class="flex-box result">
+          <img src="illustration-empty.svg" alt="Illustration Empty">
+    <h2>Results shown here</h2>
+    <span>Complete the form and click "Calculate Repayments" to see what your monthly repayments will be.</span>
+      </div>
